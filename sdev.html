@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href ="Home.css">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Standard Deviation</title>
+</head>
+
+<body>
+	<h1 style="text-align: center"> Welcome to the Simple Calculator! </h1>
+	
+	<div class="menu">
+		<div class="dropdown"> 
+			<button> Elementary </button>
+			<div class="dropdown-content"> 
+				<li> <a href="add.html"> Addition </a> </li>
+				<li> <a href="sub.html"> Subtraction </a> </li>
+				<li> <a href="mult.html"> Multiplication </a> </li>
+				<li> <a href="div.html"> Division </a> </li> 
+				<li> <a href="root.html"> Root </a> </li>
+			</div>
+		</div> 
+		<div class="dropdown"> 
+			<button> Statistical </button>
+			<div class="dropdown-content">
+				<li> <a href="avg.html"> Average </a> </li>
+				<li> <a href="var.html"> Variance </a> </li>
+				<li> <a href="sdev.html"> Standard Deviation </a> </li>
+				<li> <a href="factorial.html"> Factorial </a> </li> 
+			</div>
+		</div> 
+	</div>
+	
+	<br> 
+	
+	<div style="margin-right: 300px; margin-left: 275px; width: 600px">
+		Standard Deviation of set: <input type= "text" id="num1" style="background-color: white"> = <span id="sdev" style="width: 15px; background-color:white"></span> <br> <br> 
+		<button onclick="sdev()"> Solve </button>
+	</div> 	
+	
+	<script type="application/javascript"> 	
+	
+	function sdev() {
+		var nums = document.getElementById("num1").value;
+		var avg = aver();
+		var square = 0;
+		var data = [];
+		var beg = 0;
+		
+		gather(nums,data,beg);	
+			
+		for(let k = 0; k < data.length; k++)
+		{
+			square += Math.pow(data[k]-avg,2);
+		}	
+		
+		var inside = (1/data.length) * square;
+		
+		var sdev = Math.pow(inside,(1/2));
+		
+		document.getElementById("sdev").innerHTML = sdev;	
+	}
+	
+	function aver() {
+		var text = document.getElementById("num1").value;		
+		
+		var data = [];
+		
+		var beg = 0;
+		
+		var sum = 0;
+		
+		gather(text,data,beg);
+		
+		for(let j = 0; j < data.length; j++)
+		{
+			sum += data[j];
+		}
+		
+		
+		var avg = sum/data.length;
+		
+		return avg;
+	}
+	
+	function gather(text,data,beg) {
+		for(let i = 0; i < text.length; i++)
+		{
+			if(text.charAt(i) == ',') {
+				data.push(parseInt(text.slice(beg,i)));
+				beg = i+1;
+			}
+			else if(i == text.length-1)
+			{
+				data.push(parseInt(text.slice(beg,i+1)));
+			}	
+		}
+	
+	}
+	</script>		
+
+</body>
+
+</html>

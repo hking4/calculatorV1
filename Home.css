@@ -1,0 +1,50 @@
+﻿* {
+	background-color: #448fa3;
+	font-family: "Courier New";
+}
+
+.menu {
+	padding-left: 275px;
+}
+
+button {
+	width: 300px;
+	height: 50px;
+	background-color: orange;
+	
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: orange;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content a {
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+	background-color: orange;
+	text-align: center;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+li a {
+	color: black;
+	background-color: orange;
+}

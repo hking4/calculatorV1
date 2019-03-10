@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href ="Home.css">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Division</title>
+</head>
+
+<body>
+	<h1 style="text-align: center"> Welcome to the Simple Calculator! </h1>
+	
+	<div class="menu">
+		<div class="dropdown"> 
+			<button> Elementary </button>
+			<div class="dropdown-content"> 
+				<li> <a href="add.html"> Addition </a> </li>
+				<li> <a href="sub.html"> Subtraction </a> </li>
+				<li> <a href="mult.html"> Multiplication </a> </li>
+				<li> <a href="div.html"> Division </a> </li> 
+				<li> <a href="root.html"> Root </a> </li>
+			</div>
+		</div> 
+		<div class="dropdown"> 
+			<button> Statistical </button>
+			<div class="dropdown-content">
+				<li> <a href="avg.html"> Average </a> </li>
+				<li> <a href="var.html"> Variance </a> </li>
+				<li> <a href="sdev.html"> Standard Deviation </a> </li>
+				<li> <a href="factorial.html"> Factorial </a> </li> 
+			</div>
+		</div> 
+	</div>
+	
+	<br> 
+	
+	<div style="margin-right: 300px; margin-left: 275px; width: 600px">
+		<input type= "number" id="num1" style="background-color: white"> / <input type="number" id="num2" style="background-color: white"> = <span id="quo" style="width: 15px; background-color:white"></span> <br> <br> 
+		<button onclick="quo()"> Solve </button>
+	</div> 	
+	
+	<script type="application/javascript"> 
+	function quo() {
+		var num1 = document.getElementById("num1").value;
+		var num2 = document.getElementById("num2").value;
+		
+		var quo = parseFloat(num1)/parseFloat(num2);
+		
+		document.getElementById("quo").innerHTML = quo;
+	}
+		
+		
+	</script>
+
+</body>
+
+</html>
